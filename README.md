@@ -40,7 +40,7 @@ Printing ticks never hurt nobody, unless there are too many ticks - in which cas
 **How about a gradient background?**<br>
 No problem, since the component is identical across-browsers (if possible). I wouldn't bother for IE users, they must be used viewing the web in its worst.
 
-Mixing all those nice things in a soup of [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L22) and we have cooked outselves a nice *component *for dinner.
+Mixing all those nice things in a soup of [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L22) flavoured with the right, minimal, *markup* and we have cooked outselves a nice *component* for dinner.
 
 ---
 
