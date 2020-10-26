@@ -33,7 +33,7 @@
 
   display: inline-block;
   height: var(--thumb-size);
-  margin: calc((var(--thumb-size) - var(--track-height)) * -.25) var(--thumb-size) 0;
+  // margin: calc((var(--thumb-size) - var(--track-height)) * -.25) var(--thumb-size) 0;
   background: linear-gradient(to right, var(--ticks-color) var(--ticks-thickness), transparent 1px) repeat-x;
   background-size: var(--tickIntervalPerc) var(--ticks-height);
   background-position: calc(var(--thumb-size)/2) bottom;

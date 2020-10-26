@@ -53,6 +53,10 @@ The `<input>` element has all the information needed, but the `oninput` event is
 `--text-value` is needed along-side `--value` due to CSS inability to cast variables types. Technically
 it is possible with new [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini), but it's not yet a norm in modern-browsers.
 
+---
+
+I intentionallyl did not use the native `<progress>` element, since it wasn't flexible enough (especially not cross-browser). Using `<div class='range__progress'></div>` instead.
+
 ## Install:
 
 ```
