@@ -19,7 +19,7 @@
 <p align="center">
 <br>
   <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100'>
-    <img src="./screen.png?sanitize=true" />
+    <img src="./screen.png?sanitize=true" style='max-width: 820px' />
   </a>
 <br>
 <p>
