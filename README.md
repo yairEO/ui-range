@@ -26,7 +26,7 @@
 
 ----
 
-A CSS-only component, along-side the corresponding markup, to bring life into the boring, plain, `<input type='range'>` native component, infusing it with extras unthought-of by spec creators, leaving us, developers, alone, to figure things out in the dark, how to bring a spark of life to this lifeless poor thing browsers call *"range input"*.
+A CSS-only component, along-side the corresponding markup, to bring life into the boring, plain, `<input type='range'>` native component, infusing it with extra basic features, leaving us, developers, alone, to figure things out in the dark, how to bring a spark of life to this lifeless poor thing browsers call *"range input"*.
 
 **How is a person to know the range limits without moving it around?** <br>
 Let the user see the minimum & maximum limits.
@@ -36,6 +36,9 @@ Lets print it then.
 
 **Maybe let the user know there are steps in the field. hmmm?**<br>
 Printing ticks never hurt nobody, unless there are too many ticks - in which case, they will not be printed.
+
+**How about a gradient background?**<br>
+No problem, since the component is identical across-browsers (if possible). I wouldn't bother for IE users, they must be used viewing the web in its worst.
 
 Mixing all those nice things in a soup of [CSS variables]() and we have cooked outselves a nice *component *for dinner.
 
