@@ -57,7 +57,7 @@
   &::before {
     counter-reset: x var(--min);
     left: var(--offset);
-    transform: translateX(Calc(-50% * var(--LTR)));
+    transform: translateX(calc(-50% * var(--LTR)));
     [dir='rtl'] & {
       left: auto;
       right: var(--offset);
@@ -67,7 +67,7 @@
   &::after {
     counter-reset: x var(--max);
     right: var(--offset);
-    transform: translateX(Calc(50% * var(--LTR)));
+    transform: translateX(calc(50% * var(--LTR)));
     [dir='rtl'] & {
       right: auto;
       left: var(--offset);
