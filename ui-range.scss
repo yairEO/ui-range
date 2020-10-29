@@ -1,7 +1,7 @@
 .range {
   --primaryColor: #0366D6;
   --value-active-color: white;
-  --value-background: transparent;
+  --value-background: white;
   --value-font: 700 12px/1 Arial;
   --progress-color: #EEE;
   --progress-shadow: 2px 2px 4px rgba(0,0,0, .1) inset;
@@ -37,21 +37,32 @@
   }
 
   display: inline-block;
-  height: var(--thumb-size);
+  height: Max(var(--track-height), var(--thumb-size));
   // margin: calc((var(--thumb-size) - var(--track-height)) * -.25) var(--thumb-size) 0;
   background: linear-gradient(to right, var(--ticks-color) var(--ticks-thickness), transparent 1px) repeat-x;
   background-size: var(--tickIntervalPerc) var(--ticks-height);
-  background-position: calc(var(--thumb-size)/2) bottom;
-  padding-bottom: var(--ticks-height);
+  background-position-x: calc(var(--thumb-size)/2);
+  background-position-y: var(--flip-y, bottom);
   position: relative;
+  z-index: 1;
+  padding-bottom: var(--flip-y, var(--ticks-height));
+  padding-top: calc(var(--flip-y) * var(--ticks-height));
 
+  &[data-ticks-position='top']{
+    --flip-y: 1;
+  }
+
+  // mix/max limits texts
   &::before,
   &::after {
     --offset: calc(var(--thumb-size)/2);
     content: counter(x);
     font: 12px Arial;
     position: absolute;
-    bottom: -2.5ch;
+    bottom: var(--flip-y, -2.5ch);
+    top: calc(-2.5ch * var(--flip-y));
+    opacity: var(--min-max-opacity, .5);
+    pointer-events: none;
   }
 
   &::before {
@@ -78,7 +89,7 @@
     position: absolute;
     left: 0;
     top: calc(50% - var(--ticks-height)/2);
-    transform: translateY(-50%) translateZ(0);
+    transform: var(--flip-y, translateY(-50%) translateZ(0));
     width: 100%;
     height: calc(var(--track-height));
     pointer-events: none;
@@ -92,7 +103,7 @@
       display: block;
       margin-left: auto;
       margin-right: -1px;
-      width: calc(100% - var(--completed) * 1%);
+      width: calc((100% - var(--completed) * 1%) + (var(--completed)/100) * var(--thumb-size));
       height: 100%;
       background: var(--progress-color, #EEE);
       box-shadow: inherit;
@@ -139,8 +150,10 @@
   & > output {
     --x-offset: calc(var(--completed) * -1% * var(--LTR));
     --pos: calc(((var(--value) - var(--min))/(var(--max) - var(--min))) * 100%);
+
     pointer-events: none;
     position: absolute;
+    z-index: 5;
     background: var(--value-background);
     border-radius: 10px;
     padding: 0 4px;
