@@ -25,7 +25,10 @@
     "scripts": {
         "start": "node-sass --output-style compressed -o ./ ./*.scss",
         "push": "git push origin",
-        "push:tags": "git push origin --tags"
+        "push:tags": "git push origin --tags",
+        "commit:patch": "npm version patch --no-git-tag-version --force",
+        "commit:minor": "npm version minor --no-git-tag-version --force",
+        "commit:major": "npm version major --no-git-tag-version --force"
     },
     "author": {
         "name": "Yair Even-Or",
