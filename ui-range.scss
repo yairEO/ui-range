@@ -39,6 +39,7 @@
   background-position: calc(var(--thumb-size)/2) bottom;
   padding-bottom: var(--ticks-height);
   position: relative;
+  z-index: 0;
 
   &::before,
   &::after {
