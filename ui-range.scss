@@ -1,7 +1,7 @@
 .range {
   --primaryColor: #0366D6;
   --value-active-color: white;
-  --value-background: var(--primaryColor);
+  --value-background: transparent;
   --value-font: 700 12px/1 Arial;
   --progress-color: #EEE;
   --progress-shadow: 2px 2px 4px rgba(0,0,0, .1) inset;
@@ -20,6 +20,11 @@
   --tickInterval: 100/((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
   --tickIntervalPerc: calc((100% - var(--thumb-size))/( (var(--max) - var(--min)) / var(--x-step) ) * var(--tickEvery, 1));
   --completed: calc((var(--value) - var(--min) ) / (var(--max) - var(--min)) * 100);
+  --LTR: 1;
+
+  [dir="rtl"] & {
+    --LTR: -1;
+  }
 
   @mixin thumb{
     appearance: none;
@@ -39,7 +44,6 @@
   background-position: calc(var(--thumb-size)/2) bottom;
   padding-bottom: var(--ticks-height);
   position: relative;
-  z-index: 0;
 
   &::before,
   &::after {
@@ -53,20 +57,28 @@
   &::before {
     counter-reset: x var(--min);
     left: var(--offset);
-    transform: translateX(-50%);
+    transform: translateX(Calc(-50% * var(--LTR)));
+    [dir='rtl'] & {
+      left: auto;
+      right: var(--offset);
+    }
   }
 
   &::after {
     counter-reset: x var(--max);
     right: var(--offset);
-    transform: translateX(50%);
+    transform: translateX(Calc(50% * var(--LTR)));
+    [dir='rtl'] & {
+      right: auto;
+      left: var(--offset);
+    }
   }
 
   &__progress {
     position: absolute;
     left: 0;
     top: calc(50% - var(--ticks-height)/2);
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateZ(0);
     width: 100%;
     height: calc(var(--track-height));
     pointer-events: none;
@@ -75,16 +87,22 @@
     border-radius: 20px;
     background: var(--fill-color, white);
 
-    &::before {
+    &::after {
       content: '';
       display: block;
       margin-left: auto;
-      margin-right: -.5px;
+      margin-right: -1px;
       width: calc(100% - var(--completed) * 1%);
       height: 100%;
       background: var(--progress-color, #EEE);
       box-shadow: inherit;
       border-radius: 0 20px 20px 0;
+
+      [dir="rtl"] & {
+        margin-right: auto;
+        margin-left: -1px;
+        border-radius: 20px 0 0 20px;
+      }
     }
   }
 
@@ -111,7 +129,7 @@
     }
 
     &:hover + output {
-      background: var(--value-background);
+      --value-background: var(--primaryColor);
       color: var(--value-active-color);
       transform: translate(var(--x-offset), 0);
       box-shadow: 0 0 0 3px var(--value-background);
@@ -119,16 +137,22 @@
   }
 
   & > output {
-    --x-offset: calc(var(--completed) * -1%);
+    --x-offset: calc(var(--completed) * -1% * var(--LTR));
+    --pos: calc(((var(--value) - var(--min))/(var(--max) - var(--min))) * 100%);
     pointer-events: none;
     position: absolute;
-    background: transparent;
+    background: var(--value-background);
     border-radius: 10px;
     padding: 0 4px;
     top: -3ch; // calc(Max(var(--thumb-size), var(--track-height)) * -1);
-    left: calc(((var(--value) - var(--min))/(var(--max) - var(--min))) * 100%);
+    left: var(--pos);
     transform: translate(var(--x-offset), 6px);
     transition: all .12s ease-out, left 0s, top 0s;
+
+    [dir='rtl'] & {
+      left: auto;
+      right: var(--pos);
+    }
 
     &::after {
       content: var(--text-value);

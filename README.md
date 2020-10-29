@@ -9,8 +9,12 @@
 </p>
 
 <h1 align="center">
-  <a href='https://yaireo.github.io/ui-range'>ui-range</a> - CSS-only custom, flexible, range input
+  <a href='https://yaireo.github.io/ui-range'>UI-Range</a> 🎚️
 </h1>
+<h2 align="center">
+<em>CSS-only</em> 🎩 Custom 🛠️ Flexible 🤸‍♂️ Better <br>
+<code>&lt;input type='range'&gt; </code>
+</h2>
 
 <h3 align="center">
   👉 Demos: <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100 target='_blank'>Codepen</a> 👈
@@ -24,23 +28,32 @@
 <br>
 <p>
 
+## Features:
+
+* Extensive [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L22) usage = *Much easier* customization:
+  * Track height
+  * Track color/gradient
+  * Progress color/gradient
+  * Progress shadow
+  * Thumb size & color
+  * Ticks (per step) height & color
+  * Ticks count limit (30)
+  * Ticks skipping (Print on every N tick)
+  * Value text color when "active" (component *hover*)
+  * Value background color
+  * Cursors for hover & grabbing
+  * *RTL* (right-to-left) support via `dir=rtl` attribute
+* Value is printed by default at all times
+* Minimum & maximum values are printed at the edges
+* Ticks are printed on each step or every N step
+* No ticks if there would be too many of them
+
+
 ----
 
-A CSS-only component, along-side the corresponding markup, to bring life into the boring, plain, `<input type='range'>` native component, infusing it with extra basic features, leaving us, developers, alone, to figure things out in the dark, how to bring a spark of life to this lifeless poor thing browsers call *"range input"*.
+A *CSS-only* component, along-side the *corresponding **markup***, to bring life into the boring, plain, `<input type='range'>` native component, infusing it with extra basic features, leaving us, developers, alone, to figure things out in the dark, how to bring a spark of life to this lifeless poor thing browsers call *"range input"*.
 
-**How is a person to know the range limits without moving it around?** <br>
-Let the user see the minimum & maximum limits.
 
-**What is the current value? Who knows. A mystery.**<br>
-Lets print it then.
-
-**Maybe let the user know there are steps in the field. hmmm?**<br>
-Printing ticks never hurt nobody, unless there are too many ticks - in which case, they will not be printed.
-
-**How about a gradient background?**<br>
-No problem, since the component is identical across-browsers (if possible). I wouldn't bother for IE users, they must be used viewing the web in its worst.
-
-Mixing all those nice things in a soup of [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L22) flavoured with the right, minimal, *markup* and we have cooked outselves a nice *component* for dinner.
 
 ---
 
