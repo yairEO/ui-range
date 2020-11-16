@@ -9,7 +9,7 @@
 </p>
 
 <h1 align="center">
-  <a href='https://yaireo.github.io/ui-range'>UI-Range</a> 🎚️
+  <a href='https://codepen.io/vsync/pen/mdEJMLv'>UI-Range</a>
 </h1>
 <h2 align="center">
 <em>CSS-only</em> 🎩 Custom 🛠️ Flexible 🤸‍♂️ Better <br>
@@ -23,7 +23,7 @@
 <p align="center">
 <br>
   <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100'>
-    <img src="./screen.png?sanitize=true" style='max-width: 820px' />
+    <img src="./screen1.png?sanitize=true" style='max-width: 820px' />
   </a>
 <br>
 <p>
