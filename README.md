@@ -41,7 +41,7 @@ extending the **very basic** `<input type='range'>` native browser component, in
   * Thumb size, color & shadow
   * Ticks (per step) height, color, width, position, offset
   * Ticks count limit (30)
-  * Ticks skipping (Print on every N tick)
+  * Ticks skipping (Prints tick every *N* tick)
   * Value text color when "active" (component *hover*)
   * Value background color
   * Cursor for hover & grabbing
