@@ -1,4 +1,12 @@
 <p align="center">
+<br>
+  <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100'>
+    <img src="./screen.png?sanitize=true" style='max-width: 820px' />
+  </a>
+<br>
+<p>
+
+<p align="center">
   <a href='https://www.npmjs.com/package/@yaireo/ui-range'>
       <img src="https://img.shields.io/npm/v/@yaireo/ui-range.svg" />
   </a>
@@ -12,7 +20,7 @@
   <a href='https://codepen.io/vsync/pen/mdEJMLv'>UI-Range</a>
 </h1>
 <h2 align="center">
-<em>CSS-only</em> 🎩 Custom 🛠️ Flexible 🤸‍♂️ Better <br>
+<em>CSS-Only</em> Custom & Flexible<br>
 <code>&lt;input type='range'&gt; </code>
 </h2>
 
@@ -20,40 +28,32 @@
   👉 Demos: <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100 target='_blank'>Codepen</a> 👈
 </h3>
 
-<p align="center">
-<br>
-  <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100'>
-    <img src="./screen1.png?sanitize=true" style='max-width: 820px' />
-  </a>
-<br>
-<p>
-
+---
 ## Features:
 
-* Extensive [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L22) usage = *Much easier* customization:
-  * Track height
-  * Track color/gradient
+* Extensive [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L25) usage = *Much easier* customization:
+  * Track height, color, gradient
   * Progress color/gradient
   * Progress shadow
-  * Thumb size & color
-  * Ticks (per step) height & color
+  * Thumb size, color & shadow
+  * Ticks (per step) height, color, width, position, offset
   * Ticks count limit (30)
   * Ticks skipping (Print on every N tick)
   * Value text color when "active" (component *hover*)
   * Value background color
-  * Cursors for hover & grabbing
-  * *RTL* (right-to-left) support via `dir=rtl` attribute
+  * Cursor for hover & grabbing
+  * <del>*RTL* (right-to-left) support via `dir=rtl` attribute</del>
 * Value is printed by default at all times
 * Minimum & maximum values are printed at the edges
-* Ticks are printed on each step or every N step
-* No ticks if there would be too many of them
+* Ticks are printed on each step, or every N step
+* Ticks automatically hidden if too many (too dense to be helpful)
 
+In addition to all the root variables, a helper variable `--is-left-most` exists on the `<input>` element itself,
+which can be helpful if it is desirable to visually distingush between left/right thumbs of a multi-range slider.
 
 ----
 
 A *CSS-only* component, along-side the *corresponding **markup***, to bring life into the boring, plain, `<input type='range'>` native component, infusing it with extra basic features, leaving us, developers, alone, to figure things out in the dark, how to bring a spark of life to this lifeless poor thing browsers call *"range input"*.
-
-
 
 ---
 
@@ -68,7 +68,7 @@ it is possible with new [Houdini](https://developer.mozilla.org/en-US/docs/Web/H
 
 ---
 
-I intentionallyl did not use the native `<progress>` element, since it wasn't flexible enough (especially not cross-browser). Using `<div class='range__progress'></div>` instead.
+I intentionallyl did not use the native `<progress>` element, since it wasn't flexible enough (especially not cross-browser). Using `<div class='range-slider__progress'></div>` instead.
 
 ## Install:
 
@@ -94,12 +94,24 @@ For the SCSS version, use this path:
 
     @yaireo/ui-range/ui-range.scss
 
-### Markup example:
+### Markup Example (single range):
 
 ```html
-<div class="range" style='--min:0; --max:1000; --value:170; --text-value:"170";'>
-  <input type="range" min="0" max="1000" value="170" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify(this.value))">
+<div class="range-slider" style='--min:0; --max:100; --value:75; --text-value:"75";'>
+  <input type="range" min="0" max="100" value="75" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify(this.value))">
   <output></output>
-  <div class='range__progress'></div>
+  <div class='range-slider__progress'></div>
+</div>
+```
+
+### Markup Example (double range):
+
+```html
+<div class="range-slider flat" data-ticks-position='top' style='--min:-500; --max:500; --value-a:-220; --value-b:400; --text-value-a:"-220"; --text-value-b:"400";'>
+  <input type="range" min="-500" max="500" value="-220" oninput="this.parentNode.style.setProperty('--value-a',this.value); this.parentNode.style.setProperty('--text-value-a', JSON.stringify(this.value))">
+  <output></output>
+  <input type="range" min="-500" max="500" value="400" oninput="this.parentNode.style.setProperty('--value-b',this.value); this.parentNode.style.setProperty('--text-value-b', JSON.stringify(this.value))">
+  <output></output>
+  <div class='range-slider__progress'></div>
 </div>
 ```
