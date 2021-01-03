@@ -32,6 +32,8 @@
   --ticks-height: 5px;
   --ticks-gap: var(--ticks-height, 0); // vertical space between the ticks and the progress bar
   --ticks-color: silver;
+
+  // ⚠️ BELOW VARIABLES SHOULD NOT BE CHANGED
   --step: 1;
   --ticks-count: (var(--max) - var(--min)) / var(--step);
   --maxTicksAllowed: 30;

@@ -19,19 +19,22 @@
 <h1 align="center">
   <a href='https://codepen.io/vsync/pen/mdEJMLv'>UI-Range</a>
 </h1>
-<h2 align="center">
-<em>CSS-Only</em> Custom & Flexible<br>
-<code>&lt;input type='range'&gt; </code>
-</h2>
+<h3 align="center"><em>CSS-Only</em> Custom & Flexible<wbr><code>&lt;input type='range'&gt; </code></h3>
 
 <h3 align="center">
   👉 Demos: <a href='https://codepen.io/vsync/pen/mdEJMLv?editors=1100 target='_blank'>Codepen</a> 👈
 </h3>
 
 ---
+
+A *CSS-only* component which is designed to work along-side the *corresponding **markup*** (examples below).
+This code here is designed to bring *customizabiilty* to the **maximum** for the `range` input element,
+extending the **very basic** `<input type='range'>` native browser component, infusing it with extra features.
+
+
 ## Features:
 
-* Extensive [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L25) usage = *Much easier* customization:
+* Extensive [CSS variables](https://github.com/yairEO/ui-range/blob/master/ui-range.scss#L2-L34) usage = *Much easier* customization:
   * Track height, color, gradient
   * Progress color/gradient
   * Progress shadow
@@ -50,10 +53,6 @@
 
 In addition to all the root variables, a helper variable `--is-left-most` exists on the `<input>` element itself,
 which can be helpful if it is desirable to visually distingush between left/right thumbs of a multi-range slider.
-
-----
-
-A *CSS-only* component, along-side the *corresponding **markup***, to bring life into the boring, plain, `<input type='range'>` native component, infusing it with extra basic features, leaving us, developers, alone, to figure things out in the dark, how to bring a spark of life to this lifeless poor thing browsers call *"range input"*.
 
 ---
 
