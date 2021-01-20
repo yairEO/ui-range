@@ -36,6 +36,10 @@
         "email": "vsync.design@gmail.com"
     },
     "main": "./ui-range.css",
+    "files": [
+        "./ui-range.css",
+        "./ui-range.scss"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/yairEO/ui-range.git"
