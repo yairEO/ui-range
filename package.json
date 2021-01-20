@@ -29,6 +29,7 @@
         "commit:patch": "npm version patch --no-git-tag-version --force",
         "commit:minor": "npm version minor --no-git-tag-version --force",
         "commit:major": "npm version major --no-git-tag-version --force",
+        "header": "headr ui-range.css -o=ui-range.css --version --homepage",
         "prepare": "npm run start && git add . && git commit -am 'build'",
         "prepublishOnly": "pkg-ok"
     },
@@ -49,6 +50,7 @@
         "url": "https://github.com/yaireo/ui-range/issues"
     },
     "devDependencies": {
+        "headr": "^0.0.4",
         "node-sass": "^5.0.0"
     }
 }
