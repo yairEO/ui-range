@@ -72,6 +72,7 @@
     transition: .1s;
   }
 
+  box-sizing: content-box;
   display: inline-block;
   height: Max(var(--track-height), var(--thumb-size));
   // margin: calc((var(--thumb-size) - var(--track-height)) * -.25) var(--thumb-size) 0;
