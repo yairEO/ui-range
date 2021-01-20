@@ -29,7 +29,8 @@
         "commit:patch": "npm version patch --no-git-tag-version --force",
         "commit:minor": "npm version minor --no-git-tag-version --force",
         "commit:major": "npm version major --no-git-tag-version --force",
-        "prepublishOnly": "npm run start && pkg-ok"
+        "prepare": "npm run start && git add . && git commit -am 'build'",
+        "prepublishOnly": "pkg-ok"
     },
     "author": {
         "name": "Yair Even-Or",
