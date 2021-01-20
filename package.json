@@ -30,8 +30,8 @@
         "commit:minor": "npm version minor --no-git-tag-version --force",
         "commit:major": "npm version major --no-git-tag-version --force",
         "header": "headr ui-range.css -o=ui-range.css --version --homepage",
-        "preversion": "npm run start && npm run header",
-        "version": "git add . && git commit -am 'build'",
+        "preversion": "npm run start && git add",
+        "version": "npm run header && git add . && git commit -am 'build'",
         "prepublishOnly": "pkg-ok"
     },
     "author": {
