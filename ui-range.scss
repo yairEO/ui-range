@@ -229,7 +229,7 @@
 
         --value: var(--value-a);
         --x-offset: calc(var(--completed-a) * -1%);
-        &::after { content: var(--text-value-a) }
+        &::after { content: var(--prefix, '')var(--text-value-a)var(--suffix, ''); }
       }
     }
 
@@ -263,7 +263,7 @@
       transition: all .12s ease-out, left 0s;
 
       &::after {
-        content: var(--text-value-b);
+        content: var(--prefix, '')var(--text-value-b)var(--suffix, '');
         font: var(--value-font);
       }
     }

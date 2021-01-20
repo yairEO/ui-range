@@ -47,12 +47,16 @@ extending the **very basic** `<input type='range'>` native browser component, in
   * Cursor for hover & grabbing
   * <del>*RTL* (right-to-left) support via `dir=rtl` attribute</del>
 * Value is printed by default at all times
+* Value supports *prefix* and/or *suffix*
 * Minimum & maximum values are printed at the edges
 * Ticks are printed on each step, or every N step
 * Ticks automatically hidden if too many (too dense to be helpful)
 
 In addition to all the root variables, a helper variable `--is-left-most` exists on the `<input>` element itself,
 which can be helpful if it is desirable to visually distingush between left/right thumbs of a multi-range slider.
+
+⚠️`--min` & `--max` variables' values should be kept as *integers* (not *floating-point*) because a [CSS trick](https://stackoverflow.com/a/40179718/104380)
+using counters is used to print the values in a pseudo-element, and it only works for integers.
 
 ---
 
@@ -96,7 +100,7 @@ For the SCSS version, use this path:
 ### Markup Example (single range):
 
 ```html
-<div class="range-slider" style='--min:0; --max:100; --value:75; --text-value:"75";'>
+<div class="range-slider" style='--min:0; --max:100; --value:75; --text-value:"75"; --suffix:"%"'>
   <input type="range" min="0" max="100" value="75" oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify(this.value))">
   <output></output>
   <div class='range-slider__progress'></div>
@@ -106,7 +110,7 @@ For the SCSS version, use this path:
 ### Markup Example (double range):
 
 ```html
-<div class="range-slider flat" data-ticks-position='top' style='--min:-500; --max:500; --value-a:-220; --value-b:400; --text-value-a:"-220"; --text-value-b:"400";'>
+<div class="range-slider flat" data-ticks-position='top' style='--min:-500; --max:500; --prefix:"$" --value-a:-220; --value-b:400; --text-value-a:"-220"; --text-value-b:"400";'>
   <input type="range" min="-500" max="500" value="-220" oninput="this.parentNode.style.setProperty('--value-a',this.value); this.parentNode.style.setProperty('--text-value-a', JSON.stringify(this.value))">
   <output></output>
   <input type="range" min="-500" max="500" value="400" oninput="this.parentNode.style.setProperty('--value-b',this.value); this.parentNode.style.setProperty('--text-value-b', JSON.stringify(this.value))">
