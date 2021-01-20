@@ -29,7 +29,7 @@
         "commit:patch": "npm version patch --no-git-tag-version --force",
         "commit:minor": "npm version minor --no-git-tag-version --force",
         "commit:major": "npm version major --no-git-tag-version --force",
-        "prepublishOnly": "npm run start"
+        "prepublishOnly": "npm run start && pkg-ok"
     },
     "author": {
         "name": "Yair Even-Or",
@@ -37,8 +37,8 @@
     },
     "main": "./ui-range.css",
     "files": [
-        "./ui-range.css",
-        "./ui-range.scss"
+        "ui-range.css",
+        "ui-range.scss"
     ],
     "repository": {
         "type": "git",
