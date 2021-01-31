@@ -39,8 +39,9 @@
   --maxTicksAllowed: 30;
   --too-many-ticks: Min(1, Max(var(--ticks-count) - var(--maxTicksAllowed), 0));
   --x-step: Max( var(--step), var(--too-many-ticks) * (var(--max) - var(--min)) ); // manipulate the number of steps if too many ticks exist, so there would only be 2
-  --tickInterval: 100/((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
-  --tickIntervalPerc: calc((100% - var(--thumb-size))/( (var(--max) - var(--min)) / var(--x-step) ) * var(--tickEvery, 1));
+  // --tickInterval: 100/((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
+  --tickIntervalPerc_1: Calc( (var(--max) - var(--min)) / var(--x-step) );
+  --tickIntervalPerc: calc(  (100% - var(--thumb-size))/var(--tickIntervalPerc_1) * var(--tickEvery, 1)  );
 
   --value-a: Clamp(var(--min), var(--value, 0), var(--max)); // default value ("--value" is used in single-range markup)
   --value-b: var(--value, 0); // default value
