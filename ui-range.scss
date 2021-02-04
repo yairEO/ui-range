@@ -57,9 +57,13 @@
   // "calc" is used to inflat the outcome into a huge number, to get rid of any value between -1 & 1
   // if absolute diff of both completed % is above "5" (%)
   // ".001" bumps the value just a bit, to avoid a scenario where calc resulted in "0" (then clamp will also be "0")
-  --thumbs-too-close: Clamp(-1,   calc(1000 *    (Min(1, Max(var(--cb) - var(--ca) - 5, -1))  +  .001) ),    1);
-  --thumb-close-to-min: Min(1, Max(var(--ca) - 2, 0)); // 2% threshold
-  --thumb-close-to-max: Min(1, Max(98 - var(--cb), 0)); // 2% threshold
+  --thumbs-too-close: Clamp(
+    -1,
+    1000 * (Min(1, Max(var(--cb) - var(--ca) - 5, -1)) + 0.001),
+    1
+  );
+  --thumb-close-to-min: Min(1, Max(var(--ca) - 5, 0)); // 2% threshold
+  --thumb-close-to-max: Min(1, Max(95 - var(--cb), 0)); // 2% threshold
 
   @mixin thumb{
     appearance: none;
