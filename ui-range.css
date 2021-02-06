@@ -1,3 +1,10 @@
+/**
+  * @yaireo/ui-range - CSS-only custom, flexible, range input
+  *
+  * @version v2.1.15
+  * @homepage https://github.com/yairEO/ui-range
+  */
+
 .range-slider{--primary-color: #0366D6;--value-offset-y: var(--ticks-gap);--value-active-color: white;--value-background: transparent;--value-background-hover: var(--primary-color);--value-font: 700 12px/1 Arial;--fill-color: var(--primary-color);--progress-background: #EEE;--progress-radius: 20px;--track-height: calc(var(--thumb-size)/2);--min-max-font: 12px Arial;--min-max-opacity: .5;--min-max-x-offset: 10%;--thumb-size: 22px;--thumb-color: white;--thumb-shadow: 0 0 3px rgba(0,0,0,.4),
                   0 0 1px rgba(0,0,0,.5) inset,
                   0 0 0 99px var(--thumb-color) inset;--thumb-shadow-active: 0 0 0 calc(var(--thumb-size)/4) inset var(--thumb-color),
