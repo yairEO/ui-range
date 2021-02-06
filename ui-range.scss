@@ -67,6 +67,7 @@
 
   @mixin thumb{
     appearance: none;
+    border: none;
     height: var(--thumb-size);
     width: var(--thumb-size);
     transform: var(--thumb-transform);
@@ -206,7 +207,7 @@
     }
 
     &::-webkit-slider-thumb { @include thumb }
-    &::-moz-slider-thumb { @include thumb }
+    &::-moz-range-thumb { @include thumb }
     &::-ms-thumb { @include thumb }
 
     &:hover {
