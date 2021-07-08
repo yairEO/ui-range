@@ -118,3 +118,24 @@ For the SCSS version, use this path:
   <div class='range-slider__progress'></div>
 </div>
 ```
+
+## CSS Variables
+
+| CSS Variable             | Default                 | Description                                                           |
+|--------------------------|-------------------------|-----------------------------------------------------------------------|
+| --thumb-size             | `22px`                  | The thumb arear which is used for grabbing the slider and moving      |
+| --value-active-color     | `white`                 | *value* text color when the slider is active/hovered                  |
+| --value-background       | `transparent`           |                                                                       |
+| --value-background-hover | `--primary-color`       |                                                                       |
+| --primary-color          | `#0366d6`               | The main color of the component                                       |
+| --value-offset-y         | `--ticks-gap`           | Vertical distance of the current numerical value from the slider      |
+| --track-height           | `--thumb-size / 2`      |                                                                       |
+| --progress-radius        | `20px`                  | Border radius of the slider                                           |
+| --fill-color             | `--primary-color`       |                                                                       |
+| --show-min-max           |                         | `none` to hide the *min/max* values at the edges                      |
+| --ticks-thickness        | `1px`                   | How wide each *tick* line is                                          |
+| --ticks-height           | `5px`                   | How tall each *tick* line is                                          |
+| --ticks-gap              | `var(--ticks-height,0)` | Vertical gap between the ticks and the slider                         |
+| --min-max-x-offset       | `10%`                   | Horizontal offset of *min/max* values (more to the inside or outside) |
+| --min-max-opacity        | `0.5`                   |                                                                       |
+| --ticks-color            | `silver`                |                                                                       |
