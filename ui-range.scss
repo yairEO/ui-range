@@ -134,6 +134,8 @@
     pointer-events: none;
     margin: 0 auto;
     z-index: 5;
+    user-select: none;
+    pointer-events: none;
 
     // trick so "justify" will work
     &::after{
